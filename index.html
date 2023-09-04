@@ -46,7 +46,7 @@
         <section class="head_title bg_imagen ">
         <div class="container ">
             <h1 class="main_title " >SOLUCIONES EFICACES PARA SU NEGOCIO</h1>
-            <button class="button">Solicite nuestro servicio</button>
+            <button data-modal-open="abrir" class="button">Solicite nuestro servicio</button>
         </div>
         </section>
         <section>
@@ -90,10 +90,14 @@
             <h2 class="headings_service list">A que nos dedicamos</h2>
             <div class=" container">
             <ul class="images_services list">
-                <li><img src="./images/services/Service1.jpg" alt="servicios" width="373" height="324"></li>
-                <li><img src="./images/services/Service2.jpg" alt="servicios" width="373" height="324"></li>
-                <li><img src="./images/services/Service3.jpg" alt="servicios" width="373" height="324"></li>
-            </ul>
+                <li class="imagen_servicio">
+                    <img src="./images/services/Service1.jpg" alt="servicios" width="373" height="324">
+                    <div class="services_text">APLICACIONES DE ESCRITORIO </div></li>
+                <li class="imagen_servicio"><img src="./images/services/Service2.jpg" alt="servicios" width="373" height="324">
+                    <div class="services_text">APLICACIONES MÓVILES </div></li>
+                <li class=""><img src="./images/services/Service3.jpg" alt="servicios" width="373" height="324">
+                    <div class="services_text">SOLUCIONES DE DISEÑO </div></li>
+            </ul> 
             </div>
         </div>
         </section>
@@ -306,5 +310,14 @@
         </address>
     </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button data-modal-close class="close-button" type="button">
+            <svg class="icon-close" width="11" height="11">
+                <use href="./Images/icons/closeicon-defs.svg#icon-close-icon"></use>
+            </svg>
+            </button>
+        </div>
+        <script src="./js/modal.js"></script>
 </body>
 </html>

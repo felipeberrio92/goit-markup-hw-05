@@ -34,7 +34,7 @@ a:visited{
     text-decoration: none;
 }
 
-ul{
+ul > li{
     list-style: none;
     margin: 0;
 }
@@ -59,9 +59,8 @@ ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 26px;
-    padding-bottom: 26.5px;
     align-items: center;
+    height: auto;
 }
 .menu_list{
     display: flex;
@@ -70,6 +69,9 @@ ul{
     gap: 50px;
     margin-right: 306px;
     text-align: center;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    
 }
 .menu_contact{
     display: flex;
@@ -77,6 +79,7 @@ ul{
     justify-content: space-between;
     padding-left: 0px;
     align-items: center;
+    
 }
 .container{
     margin: auto;
@@ -102,7 +105,37 @@ ul{
 .header_link{
     color: var(--color_black);
     outline: none;
+    margin: auto;
+    height: 100%;
+    display: inline-block;
+    position: relative;
     
+}
+.current::after{
+    display: inline-block;
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(33, 150, 243);
+    left: 0px;
+    bottom: -32px;    
+}
+
+.header_link:hover::after,
+.header_link:focus::after,
+.header_link:focus-within::after
+{
+    display: inline-block;
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgb(33, 150, 243);
+    left: 0px;
+    bottom: -32px; 
 }
 .header_link:hover{
     color: var(--color_blue);
@@ -284,7 +317,6 @@ ul{
 .main__services{
     margin: auto;
     justify-content: center;
-    text-align: center;
 }
 .headings_service{
     color: var(--color_black);
@@ -312,12 +344,32 @@ ul{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    text-align: center;
     width: 1200px;
     column-gap: 37px;
-    
+    position: relative;
+}
+.imagen_servicio{
+    position: relative;
 }
 
+.services_text{
+    position: absolute;
+    color:var(--color_white);
+    text-align: center;
+    font-family: inherit;
+    line-height: normal;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.42px;
+    width: 372px;
+    height: 70px;
+    bottom: 3px;
+    background: rgba(47, 48, 58, 0.80);
+    padding-top: 27px;
+
+
+}
 .main__team{
     display: flex;
     flex-wrap: wrap;
@@ -435,6 +487,7 @@ ul{
     border-color:var(--color_icono_cliente_blue);
     fill: var(--color_icono_cliente_blue);
 }
+
 .clientes_links{
     fill: var(--color_icon_gray);
     outline-color: var(--color_blue);
@@ -633,7 +686,6 @@ ul{
     border-radius: 4px;
 }
 .border{
-    height: 404;
     width: 370px;
     
 }
@@ -648,6 +700,33 @@ ul{
 .border:focus-within{
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
     
+}
+.tarjetas_container{
+    position: relative;
+    overflow: hidden;
+}
+.card_text{
+    position: absolute;
+    font-style: normal;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color:rgba(255, 255, 255, 1);
+    background-color: rgba(33, 150, 243, 0.9);
+    font-family: inherit;
+    padding: 63px 24px;
+    width: 370px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.54px;
+    margin: 0px;
+    transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1)250ms
+    
+}
+.border:hover > .tarjetas_container > .card_text{
+    top:0;
 }
 
 .proyect_name{
