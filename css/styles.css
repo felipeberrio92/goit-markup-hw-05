@@ -245,7 +245,7 @@ ul > li{
     margin-top: 0px
 
 }
-.button{
+.button_primary{
     color: var(--color_white);
     background-color: var(--color_blue);
     cursor: pointer;
@@ -260,13 +260,13 @@ ul > li{
     justify-content: center;
     outline: none;
 }
-.button:hover{
+.button_primary:hover{
     box-shadow: rgb(0, 0, 0) 0px 4px 4px 0px;
 }
-.button:focus-within{
+.button_primary:focus-within{
     box-shadow: rgb(0, 0, 0) 0px 4px 4px 0px;
 }
-.button:focus{
+.button_primary:focus{
     box-shadow: rgb(0, 0, 0) 0px 4px 4px 0px;
 }
 .about_list{
@@ -722,11 +722,11 @@ ul > li{
     line-height: 1.5;
     letter-spacing: 0.54px;
     margin: 0px;
-    transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1)250ms
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)250ms
     
 }
 .border:hover > .tarjetas_container > .card_text{
-    top:0;
+    transform: translateY(-100%);
 }
 
 .proyect_name{
@@ -754,4 +754,52 @@ ul > li{
     letter-spacing: 0.03em;
     height: 322;
     width: 30;
+}
+/*comienza el codigo para el modal*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.backdrop .is-hidden {
+    display: none;
+}
+
+.modal {
+    width: 528px;
+    height: 581px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: var(--color_white);
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    width: 30px;
+    height: 30px;
+    background-color: var(--color_white);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+}
+
+.close-button:hover,
+.close-button:focus {
+    fill: var(--color_icono_cliente_blue);
+    cursor: pointer;
 }
